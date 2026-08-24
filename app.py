@@ -5,7 +5,7 @@ from flask import Flask, render_template, request, redirect, url_for, session, f
 
 BASE=os.path.dirname(os.path.abspath(__file__))
 DB=os.path.join(BASE,'jsescadas.db')
-app=Fapp=Flask(__name__, template_folder='.')
+app=Flask(__name__, template_folder='.')
 app.secret_key=os.environ.get('SECRET_KEY','js-escadas-v2-change-this-secret')
 
 SERVICE_TYPES=['Escada pré-moldada','Montagem / desmontagem','Remoção de escada','Abertura de vão na laje','Manutenção','Churrasqueira pré-moldada','Outro']
