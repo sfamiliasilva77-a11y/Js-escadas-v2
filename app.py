@@ -25,7 +25,7 @@ def db():
 
 def init_db():
     c=db(); c.executescript(SCHEMA)
-    if not c.execute('SELECT 1 FROM users LIMIT 1').fetchone(): c.execute('INSERT INTO users(email,password,name) VALUES(?,?,?)',('admin@jsescadas.com','1234','Administrador'))
+    if not c.execute('SELECT 1 FROM users LIMIT 1').fetchone(): c.execute('INSERT INTO users(email,password,name) VALUES(?,?,?)',('admin@jsescadas.com','13072021','Administrador'))
     c.commit(); c.close()
 init_db()
 def login_required(f):
