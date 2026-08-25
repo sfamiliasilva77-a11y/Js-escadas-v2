@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS transactions(id INTEGER PRIMARY KEY AUTOINCREMENT,cli
 def db():
     c=sqlite3.connect(DB); c.row_factory=sqlite3.Row; c.execute('PRAGMA foreign_keys=ON'); return c
 
-def idef init_db():
+def init_db():
     c=db(); c.executescript(SCHEMA)
     if not c.execute('SELECT 1 FROM users LIMIT 1').fetchone(): c.execute('INSERT INTO users(email,password,name) VALUES(?,?,?)',('admin@jsescadas.com','1234','Administrador'))
     c.commit(); c.close()
